@@ -1,10 +1,10 @@
 class WeatherFacade
-  def self.retrieve_weather(query, units)
+  def self.retrieve_weather(query)
     lat_lon = retrieve_coordinates(query)
     return lat_lon if lat_lon[:error]
 
     response = WeatherService.weather_search(lat_lon)
-    WeatherLocation.new(response, units)
+    WeatherLocation.new(response, query[:units])
   end
 
   def self.retrieve_coordinates(query)

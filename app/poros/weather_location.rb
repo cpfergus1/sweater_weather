@@ -17,9 +17,10 @@ class WeatherLocation
               :description,
               :icon,
               :hourly_weather,
-              :daily_weather
+              :daily_weather,
+              :id
 
-  def initialize(day_weather, units)
+  def initialize(day_weather, units = 'metric')
     @temp = requested_temp(units, day_weather[:current][:temp])
     @day_feels_like = requested_temp(units, day_weather[:current][:feels_like])
     @description = day_weather[:current][:weather][0][:description]

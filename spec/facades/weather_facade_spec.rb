@@ -4,6 +4,7 @@ describe 'ServicesFacade' do
   describe '.class_methods' do
     before :each do
       @params = Hash.new
+      @params[:units] = 'imperial'
     end
     it 'can return lat_lon from retrieve_coordinates', :vcr do
       @params[:location] = 'washington,D.C.'
@@ -20,15 +21,13 @@ describe 'ServicesFacade' do
 
     it 'will pull weather for fed coordinates to retrieve weather', :vcr do
       @params[:location] = 'washington,D.C.'
-      units = 'imperial'
-      return_response = WeatherFacade.retrieve_weather(@params, units)
+      return_response = WeatherFacade.retrieve_weather(@params)
       expect(return_response).to be_a(WeatherLocation)
     end
 
     it 'will return and error if bad query', :vcr do
        @params[:location] = '/@#%(@*%&'
-       units = 'imperial'
-      return_response = WeatherFacade.retrieve_weather(@params, units)
+      return_response = WeatherFacade.retrieve_weather(@params)
       expect(return_response.keys).to eq([:error, :messages])
     end
   end

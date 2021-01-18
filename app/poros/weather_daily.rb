@@ -11,9 +11,10 @@ class WeatherDaily
               :sunset,
               :sunrise,
               :description,
-              :icon
+              :icon,
+              :id
 
-  def initialize(weather_data, units, time_zone)
+  def initialize(weather_data, units = 'metric', time_zone ='America/Denver')
     @date = DateTime.strptime(weather_data[:dt].to_s, '%s').strftime('%Y-%m-%d')
     @max_temp = requested_temp(units, weather_data[:temp][:max])
     @min_temp = requested_temp(units, weather_data[:temp][:min])
