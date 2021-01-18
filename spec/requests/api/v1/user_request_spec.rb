@@ -13,6 +13,7 @@ describe 'User API' do
     expect(json).to_not have_key(:password)
     expect(json[:attributes]).to_not have_key(:password)
     expect(json[:attributes][:api_key]).to be_a(String)
+    expect(json[:attributes][:api_key].length).to eq(20)
     user = User.last
     expect(user.password_digest).to_not eq('abc123')
   end
