@@ -2,7 +2,7 @@ module Api
   module V1
     class BackgroundsController < ApplicationController
       def index
-        background = BackgroundFacade.retrieve_weather(request_params)
+        background = BackgroundFacade.retrieve_background(request_params)
         if background.instance_of?(Hash)
           payload = {
             error: background[:messages],

@@ -11,7 +11,7 @@ class LocationService
     parse_data(response, params)
   end
 
-  def self.parse_data(response,params)
+  def self.parse_data(response, params)
     if response.body.empty?
       { :error => 400, :messages => "Unknown Location: #{params[:location]}"}
     else

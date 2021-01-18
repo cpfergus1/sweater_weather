@@ -10,8 +10,8 @@ class WeatherFacade
   def self.retrieve_coordinates(query)
     response = LocationService.location_search(query)
     return response if response[:error]
-    send_params = Hash.new
-    send_params[:lat] = response[:results][0][:locations][0][:latLng][:lat]
+
+    send_params = { lat: response[:results][0][:locations][0][:latLng][:lat] }
     send_params[:lon] = response[:results][0][:locations][0][:latLng][:lng]
     send_params
   end

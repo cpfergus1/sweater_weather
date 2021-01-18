@@ -44,4 +44,22 @@ describe '.class_methods' do
                                         )
     expect(search[:value][0][:contentUrl]).to be_a(String)
   end
+
+  it 'returns an error when it has an unknown query', :vcr do
+    params = {
+        location: '@#$()*&%'
+      }
+    search = ImageService.image_search(params)
+
+    expect(search.keys).to eq([:error, :messages])
+  end
+
+  it 'returns an error when query is blank', :vcr do
+    params = {
+        location: ''
+      }
+    search = ImageService.image_search(params)
+
+    expect(search.keys).to eq([:error, :messages])
+  end
 end

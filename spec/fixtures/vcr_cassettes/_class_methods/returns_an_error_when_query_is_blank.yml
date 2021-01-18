@@ -1,0 +1,62 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.bing.microsoft.com/v7.0/images/search?count=5&q=
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Ocp-Apim-Subscription-Key:
+      - da831f6a1c1a4c18befb57ba8d3ce0b7
+      User-Agent:
+      - Faraday v1.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Pragma:
+      - no-cache
+      Content-Length:
+      - '279'
+      Content-Type:
+      - application/json; charset=utf-8
+      Expires:
+      - "-1"
+      P3p:
+      - CP="NON UNI COM NAV STA LOC CURa DEVa PSAa PSDa OUR IND"
+      Bingapis-Traceid:
+      - 8359FD262A324107956D82B2AE734C94
+      X-Msedge-Clientid:
+      - 32140D73755D6AC2331A02B074116B31
+      X-Msapi-Userstate:
+      - cca0
+      X-Search-Responseinfo:
+      - InternalResponseTime=6,MSDatacenter=CO4
+      X-Msedge-Ref:
+      - 'Ref A: 8359FD262A324107956D82B2AE734C94 Ref B: BY3EDGE0413 Ref C: 2021-01-18T15:37:13Z'
+      Apim-Request-Id:
+      - bd50c357-2ff6-4875-a208-4e73a89d6ae3
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Csp-Billing-Usage:
+      - CognitiveServices.BingSearchV7.Transaction=1
+      Date:
+      - Mon, 18 Jan 2021 15:37:13 GMT
+    body:
+      encoding: UTF-8
+      string: '{"_type": "ErrorResponse", "instrumentation": {"_type": "ResponseInstrumentation"},
+        "errors": [{"code": "InvalidRequest", "subCode": "ParameterMissing", "message":
+        "Required parameter is missing.", "moreDetails": "Required parameter is missing.",
+        "parameter": "q", "value": ""}]}'
+  recorded_at: Mon, 18 Jan 2021 15:37:13 GMT
+recorded_with: VCR 6.0.0
