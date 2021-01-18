@@ -38,7 +38,7 @@ describe '.class_methods' do
     expect(search[:results][0][:locations][0][:latLng]).to be_a(Hash)
     expect(search[:results][0][:locations][0][:latLng].keys).to eq([:lat, :lng])
     expect(search[:results][0][:locations][0][:latLng][:lat]).to be_a(Float)
-    expect(search[:results][0][:locations][0][:latLng][:lat]).to be_a(Float)
+    expect(search[:results][0][:locations][0][:latLng][:lng]).to be_a(Float)
   end
 
   it 'returns an error if bad search params are sent forward', :vcr do
