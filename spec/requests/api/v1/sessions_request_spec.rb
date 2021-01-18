@@ -19,7 +19,7 @@ describe 'Sessions API' do
     expect(json).to_not have_key(:password)
     expect(json[:attributes]).to_not have_key(:password)
     expect(json[:attributes][:api_key]).to be_a(String)
-    expect(json[:attributes][:api_key].length).to eq(14)
+    expect(json[:attributes][:api_key]).to eq('I-AM-A-API-KEY')
   end
 
   it 'returns an error if user is not found' do
