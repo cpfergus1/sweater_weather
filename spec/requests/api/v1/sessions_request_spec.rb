@@ -29,9 +29,9 @@ describe 'Sessions API' do
                     }
     post '/api/v1/sessions', headers: headers, params: JSON.generate(json_payload)
     expect(response).to_not be_successful
-    expect(response.status).to eq(404)
+    expect(response.status).to eq(400)
     json = JSON.parse(response.body, symbolize_names: true)
-    expect(json[:messages]).to include("User Not Found")
+    expect(json[:messages]).to include("E-mail or Password are incorrect")
   end
 
   it 'returns an error if user password is incorrect' do
@@ -65,6 +65,15 @@ describe 'Sessions API' do
     expect(response).to_not be_successful
     expect(response.status).to eq(404)
     json = JSON.parse(response.body, symbolize_names: true)
-    expect(json[:messages]).to include("User Not Found")
+    expect(json[:messages]).to include("E-mail or Password information not provided")
+
+      json_payload = { email: "email@email.com",
+                     password: "",
+                    }
+    post '/api/v1/sessions', headers: headers, params: JSON.generate(json_payload)
+    expect(response).to_not be_successful
+    expect(response.status).to eq(404)
+    json = JSON.parse(response.body, symbolize_names: true)
+    expect(json[:messages]).to include("E-mail or Password information not provided")
   end
 end
