@@ -48,9 +48,9 @@
 
  #### This application utilizes the following apis
   
-  ##### OpenWeather
-  ##### Yelp
-  ##### MapQuest
-  ##### Bing
+ * OpenWeather
+ * Yelp
+ * MapQuest
+ * Bing
 
 
