@@ -46,11 +46,11 @@
 
 ## Services (job queues, cache servers, search engines, etc.)
 
-  #### This application utilizes the following apis
+ #### This application utilizes the following apis
   
-    ##### OpenWeather
-    ##### Yelp
-    ##### MapQuest
-    ##### Bing
+  ##### OpenWeather
+  ##### Yelp
+  ##### MapQuest
+  ##### Bing
 
 
