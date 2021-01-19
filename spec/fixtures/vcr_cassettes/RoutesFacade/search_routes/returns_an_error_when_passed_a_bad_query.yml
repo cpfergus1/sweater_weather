@@ -1,0 +1,53 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://www.mapquestapi.com/directions/v2/route?from=john%20john&key=bzcIdGGNFL1s1C9mAM4OsLRf25V2Z2TP&to=knick%20knick
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 19 Jan 2021 01:39:42 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '278'
+      Server:
+      - Apache-Coyote/1.1
+      Set-Cookie:
+      - JSESSIONID=B057C469E34CBBAB713415461D67C0CD; Path=/directions; HttpOnly
+      Expires:
+      - Mon, 20 Dec 1998 01:00:00 GMT
+      Last-Modified:
+      - Tue, 19 Jan 2021 01:39:42 GMT
+      Cache-Control:
+      - no-cache, must-revalidate
+      Pragma:
+      - no-cache
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - OPTIONS,GET,POST
+      Status:
+      - success
+      Transactionweight:
+      - '1'
+    body:
+      encoding: UTF-8
+      string: '{"route":{"routeError":{"errorCode":2,"message":""}},"info":{"statuscode":402,"copyright":{"imageAltText":"©
+        2020 MapQuest, Inc.","imageUrl":"http://api.mqcdn.com/res/mqlogo.gif","text":"©
+        2020 MapQuest, Inc."},"messages":["We are unable to route with the given locations."]}}'
+  recorded_at: Tue, 19 Jan 2021 01:39:42 GMT
+recorded_with: VCR 6.0.0

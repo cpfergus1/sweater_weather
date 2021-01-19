@@ -1,0 +1,68 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.yelp.com/v3/businesses/search?limit=1&location=pueblo&sort_by=rating&term=dondondon
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer UXxqLQUsLLIWvMOGh5_q1vINKyRdX26SOx-1GvjT8K6UxR4K-NT0R7AZd07VA1JfSzu_Un3usF4HWtF3_JS_h8Pm1QGv_caImrnBtTUt3jRuAp1bDgBkiwNM6PMFYHYx
+      User-Agent:
+      - Faraday v1.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Ratelimit-Dailylimit:
+      - '5000'
+      Ratelimit-Remaining:
+      - '4974'
+      X-Zipkin-Id:
+      - 4206e6d73b19035a
+      Server:
+      - envoy
+      Ratelimit-Resettime:
+      - '2021-01-20T00:00:00+00:00'
+      X-Routing-Service:
+      - routing-main--uswest2-5b584d59bc-jm8vv; site=public_api_v3
+      X-B3-Sampled:
+      - '0'
+      X-Proxied:
+      - 10-69-113-152-uswest2aprod
+      X-Extlb:
+      - 10-69-113-152-uswest2aprod
+      Cache-Control:
+      - max-age=0, must-revalidate, no-cache, no-store, private, no-transform
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Tue, 19 Jan 2021 18:37:07 GMT
+      Via:
+      - 1.1 varnish
+      X-Served-By:
+      - cache-den8242-DEN
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+      Vary:
+      - Accept-Encoding
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"businesses": [], "total": 0, "region": {"center": {"longitude": -104.5733642578125,
+        "latitude": 38.27035217485165}}}'
+  recorded_at: Tue, 19 Jan 2021 18:37:07 GMT
+recorded_with: VCR 6.0.0

@@ -15,4 +15,9 @@ class WeatherFacade
     send_params[:lon] = response[:results][0][:locations][0][:latLng][:lng]
     send_params
   end
+
+  def self.weather_at_dest(lat_lon, units)
+    response = WeatherService.weather_search(lat_lon[:lat_lon])
+    WeatherLocation.new(response, units)
+  end
 end

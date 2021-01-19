@@ -1,0 +1,55 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://www.mapquestapi.com/directions/v2/route?from=Denver,%20CO&key=bzcIdGGNFL1s1C9mAM4OsLRf25V2Z2TP&to=Sao%20Paulo,%20SP
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 19 Jan 2021 00:13:58 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '2198'
+      Server:
+      - Apache-Coyote/1.1
+      Set-Cookie:
+      - JSESSIONID=B8D6B6D27533BD0044D5448D21203B14; Path=/directions; HttpOnly
+      Expires:
+      - Mon, 20 Dec 1998 01:00:00 GMT
+      Last-Modified:
+      - Tue, 19 Jan 2021 00:13:58 GMT
+      Cache-Control:
+      - no-cache, must-revalidate
+      Pragma:
+      - no-cache
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - OPTIONS,GET,POST
+      Status:
+      - success
+      Transactionweight:
+      - '1'
+    body:
+      encoding: UTF-8
+      string: '{"route":{"hasTollRoad":false,"hasBridge":false,"distance":0,"hasTimedRestriction":false,"hasTunnel":false,"hasHighway":false,"computedWaypoints":[],"routeError":{"errorCode":202,"message":""},"formattedTime":"00:00:00","sessionId":"","hasAccessRestriction":false,"realTime":-1,"hasSeasonalClosure":false,"hasCountryCross":false,"fuelUsed":0,"legs":[],"options":{"arteryWeights":[],"cyclingRoadFactor":1,"timeType":0,"useTraffic":false,"returnLinkDirections":false,"countryBoundaryDisplay":true,"enhancedNarrative":false,"locale":"en_US","tryAvoidLinkIds":[],"drivingStyle":2,"doReverseGeocode":true,"generalize":-1,"mustAvoidLinkIds":[],"sideOfStreetDisplay":true,"routeType":"FASTEST","avoidTimedConditions":false,"routeNumber":0,"shapeFormat":"raw","maxWalkingDistance":-1,"destinationManeuverDisplay":true,"transferPenalty":-1,"narrativeType":"text","walkingSpeed":-1,"urbanAvoidFactor":-1,"stateBoundaryDisplay":true,"unit":"M","highwayEfficiency":22,"maxLinkId":0,"maneuverPenalty":-1,"avoidTripIds":[],"filterZoneFactor":-1,"manmaps":"true"},"locations":[{"dragPoint":false,"displayLatLng":{"lng":-104.984853,"lat":39.738453},"adminArea4":"Denver
+        County","adminArea5":"Denver","postalCode":"","adminArea1":"US","adminArea3":"CO","type":"s","sideOfStreet":"N","geocodeQualityCode":"A5XAX","adminArea4Type":"County","linkId":58077864,"street":"","adminArea5Type":"City","geocodeQuality":"CITY","adminArea1Type":"Country","adminArea3Type":"State","latLng":{"lng":-104.984853,"lat":39.738453}},{"dragPoint":false,"displayLatLng":{"lng":-46.633382,"lat":-23.550651},"adminArea4":"","adminArea5":"São
+        Paulo","postalCode":"","adminArea1":"BR","adminArea3":"SP","type":"s","sideOfStreet":"N","geocodeQualityCode":"A5XAX","adminArea4Type":"County","linkId":53298814,"street":"","adminArea5Type":"City","geocodeQuality":"CITY","adminArea1Type":"Country","adminArea3Type":"State","latLng":{"lng":-46.633382,"lat":-23.550651}}],"time":0,"hasUnpaved":false,"locationSequence":[0,1],"hasFerry":false},"info":{"statuscode":602,"copyright":{"imageAltText":"©
+        2020 MapQuest, Inc.","imageUrl":"http://api.mqcdn.com/res/mqlogo.gif","text":"©
+        2020 MapQuest, Inc."},"messages":["Unable to calculate route."]}}'
+  recorded_at: Tue, 19 Jan 2021 00:13:58 GMT
+recorded_with: VCR 6.0.0

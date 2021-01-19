@@ -1,0 +1,58 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.yelp.com/v3/businesses/search?limit=1&location=&sort_by=rating&term=chinese
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer UXxqLQUsLLIWvMOGh5_q1vINKyRdX26SOx-1GvjT8K6UxR4K-NT0R7AZd07VA1JfSzu_Un3usF4HWtF3_JS_h8Pm1QGv_caImrnBtTUt3jRuAp1bDgBkiwNM6PMFYHYx
+      User-Agent:
+      - Faraday v1.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '110'
+      Content-Type:
+      - application/json
+      X-Routing-Service:
+      - routing-main--uswest2-5b584d59bc-jm8js; site=public_api_v3
+      Server:
+      - envoy
+      X-Zipkin-Id:
+      - 1d62b6fcdf70fbd8
+      X-B3-Sampled:
+      - '0'
+      X-Proxied:
+      - 10-69-95-86-uswest2aprod
+      X-Extlb:
+      - 10-69-95-86-uswest2aprod
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Tue, 19 Jan 2021 18:26:15 GMT
+      Via:
+      - 1.1 varnish
+      X-Served-By:
+      - cache-den8283-DEN
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+    body:
+      encoding: UTF-8
+      string: '{"error": {"code": "VALIDATION_ERROR", "description": "'''' is too
+        short", "field": "location", "instance": ""}}'
+  recorded_at: Tue, 19 Jan 2021 18:26:15 GMT
+recorded_with: VCR 6.0.0
