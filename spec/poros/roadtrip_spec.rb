@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe WeatherLocation, type: :poros do
+describe Roadtrip, type: :poros do
   before :each do
     file_contents = File.read('./spec/fixtures/weather_location_fixture.json')
     sample_weather = JSON.parse(file_contents, symbolize_names: true)
