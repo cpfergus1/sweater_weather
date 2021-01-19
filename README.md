@@ -43,8 +43,9 @@
 
   
 ## Endpoints
-    * api/v1/forecast
-     *this end point allows the requestor to find weather information for a specified location, sample output of this endpoint:
+  * api/v1/forecast
+    * acceptable parameters are 'location' (string - i.e. Denver,CO) and units (string - 'imperial' or 'metric')
+    * this end point allows the requestor to find weather information for a specified location, sample output of this endpoint:
 ```
   {
     "data": {
