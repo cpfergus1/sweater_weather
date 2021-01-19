@@ -22,4 +22,40 @@ describe 'Munchies API' do
       end
     end
   end
+
+  it "returns an error for a bad destination", :vcr do
+
+    get '/api/v1/munchies?origin=denver,co&destination=!!!!&food=chinese&units=imperial'
+    expect(response).to_not be_successful
+    expect(response.status).to be >= 400
+    json = JSON.parse(response.body, symbolize_names: true)
+    expect(json[0]).to_not be_empty
+  end
+
+  it "returns an error for a empty destination", :vcr do
+
+    get '/api/v1/munchies?origin=denver,co&destination=&food=chinese&units=imperial'
+    expect(response).to_not be_successful
+    expect(response.status).to be >= 400
+    json = JSON.parse(response.body, symbolize_names: true)
+    expect(json[0]).to_not be_empty
+  end
+
+  it "returns an error for routefacade failure", :vcr do
+
+    get '/api/v1/munchies?origin=,co&destination=&food=chinese&units=imperial'
+    expect(response).to_not be_successful
+    expect(response.status).to be >= 400
+    json = JSON.parse(response.body, symbolize_names: true)
+    expect(json[0]).to_not be_empty
+  end
+
+  it "returns an error for no food input", :vcr do
+
+    get '/api/v1/munchies?origin=,co&destination=&food=&units=imperial'
+    expect(response).to_not be_successful
+    expect(response.status).to be >= 400
+    json = JSON.parse(response.body, symbolize_names: true)
+    expect(json[0]).to_not be_empty
+  end
 end
