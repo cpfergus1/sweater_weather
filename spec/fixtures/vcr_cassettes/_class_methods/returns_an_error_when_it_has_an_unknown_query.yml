@@ -1,0 +1,60 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.bing.microsoft.com/v7.0/images/search?count=5&q=@%23$()*%26%25
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Ocp-Apim-Subscription-Key:
+      - da831f6a1c1a4c18befb57ba8d3ce0b7
+      User-Agent:
+      - Faraday v1.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Pragma:
+      - no-cache
+      Content-Length:
+      - '89'
+      Content-Type:
+      - application/json; charset=utf-8
+      Expires:
+      - "-1"
+      P3p:
+      - CP="NON UNI COM NAV STA LOC CURa DEVa PSAa PSDa OUR IND"
+      Bingapis-Traceid:
+      - 14F339F8AD5F4F4883144AADDEEF3BF8
+      X-Msedge-Clientid:
+      - 1ABFDD1F71376F9104D6D2DC707B6EB5
+      X-Msapi-Userstate:
+      - 1b0c
+      X-Search-Responseinfo:
+      - InternalResponseTime=96,MSDatacenter=CO4
+      X-Msedge-Ref:
+      - 'Ref A: 14F339F8AD5F4F4883144AADDEEF3BF8 Ref B: BY3EDGE0218 Ref C: 2021-01-18T15:36:37Z'
+      Apim-Request-Id:
+      - a1757c54-b4b8-4e75-a23c-b2bd23a91aef
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Csp-Billing-Usage:
+      - CognitiveServices.BingSearchV7.Transaction=1
+      Date:
+      - Mon, 18 Jan 2021 15:36:37 GMT
+    body:
+      encoding: UTF-8
+      string: '{"_type": "Images", "instrumentation": {"_type": "ResponseInstrumentation"},
+        "value": []}'
+  recorded_at: Mon, 18 Jan 2021 15:36:37 GMT
+recorded_with: VCR 6.0.0
