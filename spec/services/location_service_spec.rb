@@ -51,4 +51,30 @@ describe '.class_methods' do
     expect(search[:error]).to eq(400)
     expect(search[:messages]).to eq("Unknown Location: #{params[:location]}")
   end
+
+  it 'can pull a route through get_directions', :vcr do
+    params = {
+      origin: 'Denver, CO',
+      destination: 'New York, NY'
+    }
+    search = LocationService.get_directions(params)
+    expect(search[:route]).to be_a(Hash)
+    expect(search[:route][:realTime]).to be_a(Integer)
+    expect(search[:route][:realTime]).to be < 10000000
+    expect(search[:route][:locations]).to be_a(Array)
+  end
+
+  it 'may return error to non-connectable routes', :vcr do
+    params = {
+      origin: 'Denver, CO',
+      destination: 'Sao Paulo, SP'
+    }
+    search = LocationService.get_directions(params)
+    expect(search).to be_a(Hash)
+    expect(search[:route]).to be_a(Hash)
+    expect(search[:route][:realTime]).to be_a(Integer)
+    expect(search[:route][:realTime]).to eq(-1)
+    expect(search[:info][:messages][0]).to include("Unable to calculate route")
+  end
+
 end
