@@ -43,10 +43,55 @@
 
   
 ## Endpoints
+    * api/v1/forecast
+     *this end point allows the requestor to find weather information for a specified location, sample output of this endpoint:
+```
+  {
+    "data": {
+        "id": null,
+        "type": "forecast",
+        "attributes": {
+            "temp": 3.61,
+            "day_feels_like": 0.0,
+            "description": "broken clouds",
+            "date": "2021-01-19 14:43:10 -0700",
+            "clouds": 72,
+            "sunset": "2021-01-19 17:04:03 -0700",
+            "sunrise": "2021-01-19 07:17:07 -0700",
+            "humidity": 27,
+            "uvi": 0.59,
+            "visability": 10000,
+            "icon": "04d",
+            "hourly_weather": [
+                {
+                    "time": "14:00:00",
+                    "temp": 3.61,
+                    "wind_speed": 2.32,
+                    "wind_direction": "SSE",
+                    "description": "broken clouds",
+                    "icon": "04d"
+                }, ...
+            ],
+            "daily_weather": [
+                {
+                    "date": "2021-01-19",
+                    "max_temp": 3.61,
+                    "min_temp": -2.1,
+                    "description": "overcast clouds",
+                    "sunset": "2021-01-19 17:04:03 -0700",
+                    "sunrise": "2021-01-19 07:17:07 -0700",
+                    "icon": "04d"
+                }, ...
+               ]
+             }
+           }
+       }
+
+```
 
 ## Services (job queues, cache servers, search engines, etc.)
 
- #### This application utilizes the following apis
+ #### This application utilizes the following APIs
   
  * OpenWeather
  * Yelp
