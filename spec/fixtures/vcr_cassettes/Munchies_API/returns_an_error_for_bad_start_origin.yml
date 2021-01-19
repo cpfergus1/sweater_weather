@@ -1,0 +1,128 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.yelp.com/v3/businesses/search?limit=1&location=pueblo&sort_by=rating&term=chinese
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer UXxqLQUsLLIWvMOGh5_q1vINKyRdX26SOx-1GvjT8K6UxR4K-NT0R7AZd07VA1JfSzu_Un3usF4HWtF3_JS_h8Pm1QGv_caImrnBtTUt3jRuAp1bDgBkiwNM6PMFYHYx
+      User-Agent:
+      - Faraday v1.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Ratelimit-Dailylimit:
+      - '5000'
+      Ratelimit-Remaining:
+      - '4970'
+      X-Zipkin-Id:
+      - 0f43f1200738968d
+      Server:
+      - envoy
+      Ratelimit-Resettime:
+      - '2021-01-20T00:00:00+00:00'
+      X-Routing-Service:
+      - routing-main--uswest2-5b584d59bc-c4hft; site=public_api_v3
+      X-B3-Sampled:
+      - '0'
+      X-Proxied:
+      - 10-69-150-247-uswest2bprod
+      X-Extlb:
+      - 10-69-150-247-uswest2bprod
+      Cache-Control:
+      - max-age=0, must-revalidate, no-cache, no-store, private, no-transform
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Tue, 19 Jan 2021 18:42:52 GMT
+      Via:
+      - 1.1 varnish
+      X-Served-By:
+      - cache-den8260-DEN
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+      Vary:
+      - Accept-Encoding
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"businesses": [{"id": "AvI8d7y-xBUAUowQsVrg0g", "alias": "asian-tropix-fusion-pueblo-west",
+        "name": "Asian Tropix Fusion", "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/K74PX3E3KtKZSOnaYOGcvQ/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/asian-tropix-fusion-pueblo-west?adjust_creative=6fZDPuc_cY6xva6_XLclDg&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6fZDPuc_cY6xva6_XLclDg",
+        "review_count": 27, "categories": [{"alias": "hawaiian", "title": "Hawaiian"},
+        {"alias": "asianfusion", "title": "Asian Fusion"}, {"alias": "bbq", "title":
+        "Barbeque"}], "rating": 4.5, "coordinates": {"latitude": 38.3208058831895,
+        "longitude": -104.703300995953}, "transactions": ["pickup", "delivery"], "location":
+        {"address1": "198 S Purcell Blvd", "address2": "", "address3": null, "city":
+        "Pueblo West", "zip_code": "81007", "country": "US", "state": "CO", "display_address":
+        ["198 S Purcell Blvd", "Pueblo West, CO 81007"]}, "phone": "+17192813795",
+        "display_phone": "(719) 281-3795", "distance": 12651.302104983844}], "total":
+        20, "region": {"center": {"longitude": -104.5733642578125, "latitude": 38.27035217485165}}}'
+  recorded_at: Tue, 19 Jan 2021 18:42:52 GMT
+- request:
+    method: get
+    uri: http://www.mapquestapi.com/directions/v2/route?from=&key=bzcIdGGNFL1s1C9mAM4OsLRf25V2Z2TP&to=pueblo
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 19 Jan 2021 18:42:52 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '272'
+      Server:
+      - Apache-Coyote/1.1
+      Set-Cookie:
+      - JSESSIONID=B34975A01F7148CE580106A0BB3374B3; Path=/directions; HttpOnly
+      Expires:
+      - Mon, 20 Dec 1998 01:00:00 GMT
+      Last-Modified:
+      - Tue, 19 Jan 2021 18:42:52 GMT
+      Cache-Control:
+      - no-cache, must-revalidate
+      Pragma:
+      - no-cache
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - OPTIONS,GET,POST
+      Status:
+      - success
+      Transactionweight:
+      - '1'
+    body:
+      encoding: UTF-8
+      string: '{"route":{"routeError":{"errorCode":211,"message":""}},"info":{"statuscode":611,"copyright":{"imageAltText":"©
+        2020 MapQuest, Inc.","imageUrl":"http://api.mqcdn.com/res/mqlogo.gif","text":"©
+        2020 MapQuest, Inc."},"messages":["At least two locations must be provided."]}}'
+  recorded_at: Tue, 19 Jan 2021 18:42:52 GMT
+recorded_with: VCR 6.0.0
