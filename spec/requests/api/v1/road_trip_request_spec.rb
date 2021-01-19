@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-describe 'forecast API' do
-  it 'sends a weather forecast' do
+describe 'road_trip API' do
+  it 'sends a roadtrip' do
     VCR.use_cassette('./spec/fixtures/vcr_cassettes/road_trip_request/returns_a_roadtrip_object.yml') do
       VCR.use_cassette('road_trip_request/weather_object.yml') do
         User.create!({ email: "email@email.com",
@@ -46,7 +46,7 @@ describe 'forecast API' do
     expect(response).to_not be_successful
     expect(response.status).to be >= 400
     json = JSON.parse(response.body, symbolize_names: true)
-    expect(json[0]).to_not be_empty
+    expect(json[:messages][0]).to_not be_empty
   end
 
   it "returns an error for a empty destination", :vcr do
@@ -65,7 +65,7 @@ describe 'forecast API' do
     expect(response).to_not be_successful
     expect(response.status).to be >= 400
     json = JSON.parse(response.body, symbolize_names: true)
-    expect(json[0]).to_not be_empty
+    expect(json[:messages][0]).to_not be_empty
   end
 
   it "returns an error for a mismatch or empty api", :vcr do
@@ -84,8 +84,7 @@ describe 'forecast API' do
     expect(response).to_not be_successful
     expect(response.status).to be >= 400
     json = JSON.parse(response.body, symbolize_names: true)
-    expect(json[0]).to_not be_empty
-
+    expect(json[:messages][0]).to_not be_empty
 
     headers = {'CONTENT_TYPE' => 'application/json'}
     json_payload = { origin: "denver,co",
@@ -97,6 +96,6 @@ describe 'forecast API' do
     expect(response).to_not be_successful
     expect(response.status).to be >= 400
     json = JSON.parse(response.body, symbolize_names: true)
-    expect(json[0]).to_not be_empty
+    expect(json[:messages][0]).to_not be_empty
   end
 end

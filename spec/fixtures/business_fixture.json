@@ -1,0 +1,51 @@
+{
+  "businesses": [
+    {
+      "id": "kS95K8J3EqZqWqHQiYc9rw",
+      "alias": "hong-kong-station-centennial",
+      "name": "Hong Kong Station",
+      "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/ADz4r5Eefhyu3cGm5hMu8Q/o.jpg",
+      "is_closed": false,
+      "url": "https://www.yelp.com/biz/hong-kong-station-centennial?adjust_creative=6fZDPuc_cY6xva6_XLclDg&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6fZDPuc_cY6xva6_XLclDg",
+      "review_count": 157,
+      "categories": [
+        {
+          "alias": "chinese",
+          "title": "Chinese"
+        }
+      ],
+      "rating": 5.0,
+      "coordinates": {
+        "latitude": 39.5919116,
+        "longitude": -104.8866552
+      },
+      "transactions": [
+        "pickup",
+        "delivery"
+      ],
+      "location": {
+        "address1": "6878 S Yosemite St",
+        "address2": null,
+        "address3": "",
+        "city": "Centennial",
+        "zip_code": "80112",
+        "country": "US",
+        "state": "CO",
+        "display_address": [
+          "6878 S Yosemite St",
+          "Centennial, CO 80112"
+        ]
+      },
+      "phone": "+17205920861",
+      "display_phone": "(720) 592-0861",
+      "distance": 17494.75381376705
+    }
+  ],
+  "total": 515,
+  "region": {
+    "center": {
+      "longitude": -104.97024536132812,
+      "latitude": 39.73552421220229
+    }
+  }
+}

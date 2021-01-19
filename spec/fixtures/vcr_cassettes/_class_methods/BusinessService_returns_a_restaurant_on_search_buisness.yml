@@ -1,0 +1,77 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.yelp.com/v3/businesses/search?limit=1&location=denver,co&sort_by=rating&term=chinese
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer UXxqLQUsLLIWvMOGh5_q1vINKyRdX26SOx-1GvjT8K6UxR4K-NT0R7AZd07VA1JfSzu_Un3usF4HWtF3_JS_h8Pm1QGv_caImrnBtTUt3jRuAp1bDgBkiwNM6PMFYHYx
+      User-Agent:
+      - Faraday v1.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Ratelimit-Dailylimit:
+      - '5000'
+      Ratelimit-Remaining:
+      - '4996'
+      X-Zipkin-Id:
+      - 00734b715a859d84
+      Server:
+      - envoy
+      Ratelimit-Resettime:
+      - '2021-01-20T00:00:00+00:00'
+      X-Routing-Service:
+      - routing-main--uswest2-5b584d59bc-btwtf; site=public_api_v3
+      X-B3-Sampled:
+      - '0'
+      X-Proxied:
+      - 10-69-70-199-uswest2aprod
+      X-Extlb:
+      - 10-69-70-199-uswest2aprod
+      Cache-Control:
+      - max-age=0, must-revalidate, no-cache, no-store, private, no-transform
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Tue, 19 Jan 2021 16:47:15 GMT
+      Via:
+      - 1.1 varnish
+      X-Served-By:
+      - cache-den8220-DEN
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+      Vary:
+      - Accept-Encoding
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"businesses": [{"id": "kS95K8J3EqZqWqHQiYc9rw", "alias": "hong-kong-station-centennial",
+        "name": "Hong Kong Station", "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/ADz4r5Eefhyu3cGm5hMu8Q/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/hong-kong-station-centennial?adjust_creative=6fZDPuc_cY6xva6_XLclDg&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6fZDPuc_cY6xva6_XLclDg",
+        "review_count": 157, "categories": [{"alias": "chinese", "title": "Chinese"}],
+        "rating": 5.0, "coordinates": {"latitude": 39.5919116, "longitude": -104.8866552},
+        "transactions": ["pickup", "delivery"], "location": {"address1": "6878 S Yosemite
+        St", "address2": null, "address3": "", "city": "Centennial", "zip_code": "80112",
+        "country": "US", "state": "CO", "display_address": ["6878 S Yosemite St",
+        "Centennial, CO 80112"]}, "phone": "+17205920861", "display_phone": "(720)
+        592-0861", "distance": 17494.75381376705}], "total": 515, "region": {"center":
+        {"longitude": -104.97024536132812, "latitude": 39.73552421220229}}}'
+  recorded_at: Tue, 19 Jan 2021 16:47:15 GMT
+recorded_with: VCR 6.0.0

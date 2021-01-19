@@ -26,7 +26,7 @@ describe 'RoutesFacade' do
                 destination: 'knick knick'
                 }
       response = RoutesFacade.search_routes(params)
-      expect(response.keys).to eq([:statuscode, :copyright, :messages])
+      expect(response.keys).to eq([:statuscode, :messages])
       expect(response[:messages][0]).to include('We are unable to route with the given locations.')
     end
 
@@ -36,7 +36,7 @@ describe 'RoutesFacade' do
                 destination: ''
                 }
       response = RoutesFacade.search_routes(params)
-      expect(response.keys).to eq([:statuscode, :copyright, :messages])
+      expect(response.keys).to eq([:statuscode, :messages])
       expect(response[:messages][0]).to include('At least two locations must be provided')
     end
   end
