@@ -5,7 +5,7 @@ describe 'Munchies API' do
     VCR.use_cassette('./spec/fixtures/vcr_cassettes/munchies/munchies') do
       VCR.use_cassette('road_trip_request/munchies/roadtrip') do
         VCR.use_cassette('road_trip_request/munchies/weather') do
-          post '/api/v1/munchies?origin=denver,co&destination=pueblo&food=chinese'
+          get '/api/v1/munchies?origin=denver,co&destination=pueblo&food=chinese&units=imperial'
           expect(response).to be_successful
           munchies = JSON.parse(response.body, symbolize_names: true)[:data]
           expect(road_trip).to be_a(Hash)
