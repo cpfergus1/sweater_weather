@@ -6,7 +6,7 @@ module Api
 
         road_trip = RoutesFacade.search_routes(request_params)
         if road_trip.is_a?(Hash)
-          render json: road_trip[:messages], status: road_trip[:statuscode]
+          render json: road_trip, status: road_trip[:statuscode]
         else
           render json: RoadtripSerializer.new(road_trip)
         end
@@ -24,7 +24,10 @@ module Api
       end
 
       def api_error
-        [{ messages: 'User Unauthorized' }]
+        {
+          statuscode: 401,
+          messages: ['User Unauthorized']
+        }
       end
     end
   end

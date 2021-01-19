@@ -8,8 +8,8 @@ class Roadtrip
   def initialize(route_data, weather_data)
     @start_city = address_smash(route_data, 0)
     @end_city = address_smash(route_data, 1)
-    @travel_time = travel_time_calc(route_data[:route][:realTime])
-    @weather_at_eta = weather_at_time(weather_data, route_data[:route][:realTime])
+    @travel_time = travel_time_calc(route_data[:route][:time])
+    @weather_at_eta = weather_at_time(weather_data, route_data[:route][:time])
   end
 
   def address_smash(route_data, array_loc)
@@ -22,7 +22,7 @@ class Roadtrip
   end
 
   def travel_time_calc(sec)
-    if sec == -1
+    if sec == -1 || sec == 1_000_000
       'Impossible Route'
     else
       "%02d hours, %02d minutes, %02d seconds" % [sec / 3600, sec / 60 % 60, sec % 60]

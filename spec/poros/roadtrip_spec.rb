@@ -24,7 +24,7 @@ describe Roadtrip, type: :poros do
   end
 
   it 'will return impossible route if directions cannot be found' do
-    @sample_route[:route][:realTime] = -1
+    @sample_route[:route][:time] = -1
     units = 'imperial'
     current_day = WeatherLocation.new(@sample_weather, units)
     roadtrip = Roadtrip.new(@sample_route, current_day)
@@ -32,7 +32,7 @@ describe Roadtrip, type: :poros do
   end
 
   it 'will return info from days if travel time is very long' do
-    @sample_route[:route][:realTime] = 345_600 #4 days
+    @sample_route[:route][:time] = 345_600 #4 days
     units = 'imperial'
     current_day = WeatherLocation.new(@sample_weather, units)
     roadtrip = Roadtrip.new(@sample_route, current_day)
@@ -41,7 +41,7 @@ describe Roadtrip, type: :poros do
   end
 
   it 'will return forecast out of range if travel time is very very long' do
-    @sample_route[:route][:realTime] = 777_600 #9 days
+    @sample_route[:route][:time] = 777_600 #9 days
     units = 'imperial'
     current_day = WeatherLocation.new(@sample_weather, units)
     roadtrip = Roadtrip.new(@sample_route, current_day)
