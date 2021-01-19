@@ -20,8 +20,7 @@ describe Munchies, type: :poros do
     roadtrip = Roadtrip.new(@sample_route, current_day)
     munchies = Munchies.new(@sample_buisness_data, roadtrip)
     expect(munchies).to be_a Munchies
-    expect(munchies.start_city).to be_a(String)
-    expect(munchies.end_city).to be_a(String)
+    expect(munchies.destination_city).to be_a(String)
     expect(munchies.travel_time).to be_a(String)
     expect(munchies.weather_at_eta).to be_a(Hash)
     expect(munchies.weather_at_eta[:temperature]).to be_a(Float)
