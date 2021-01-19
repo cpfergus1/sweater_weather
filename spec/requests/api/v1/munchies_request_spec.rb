@@ -29,7 +29,7 @@ describe 'Munchies API' do
     expect(response).to_not be_successful
     expect(response.status).to be >= 400
     json = JSON.parse(response.body, symbolize_names: true)
-    expect(json[0]).to_not be_empty
+    expect(json).to_not be_empty
   end
 
   it "returns an error for a empty destination", :vcr do
@@ -38,7 +38,7 @@ describe 'Munchies API' do
     expect(response).to_not be_successful
     expect(response.status).to be >= 400
     json = JSON.parse(response.body, symbolize_names: true)
-    expect(json[0]).to_not be_empty
+    expect(json).to_not be_empty
   end
 
   it "returns an error for routefacade failure", :vcr do
@@ -47,7 +47,7 @@ describe 'Munchies API' do
     expect(response).to_not be_successful
     expect(response.status).to be >= 400
     json = JSON.parse(response.body, symbolize_names: true)
-    expect(json[0]).to_not be_empty
+    expect(json).to_not be_empty
   end
 
   it "returns an error for no food input", :vcr do
@@ -56,6 +56,6 @@ describe 'Munchies API' do
     expect(response).to_not be_successful
     expect(response.status).to be >= 400
     json = JSON.parse(response.body, symbolize_names: true)
-    expect(json[0]).to_not be_empty
+    expect(json).to_not be_empty
   end
 end

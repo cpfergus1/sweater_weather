@@ -17,9 +17,10 @@ module Api
 
       def error_check(returned_request)
         if returned_request[:businesses]
-          render json: "Cannot find any buisnesses with associated request", status: :bad_request
+          render json: {messages: "Cannot find any buisnesses with associated request"}, status: :bad_request
         elsif returned_request[:error]
-          render json: returned_request[:error][:description], status: 400
+          message = {messages: returned_request[:error][:description]}
+          render json: message, status: 400
         else
           render json: returned_request[:messages], status: returned_request[:statuscode]
         end
