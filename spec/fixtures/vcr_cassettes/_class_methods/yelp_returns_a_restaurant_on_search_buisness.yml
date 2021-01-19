@@ -1,0 +1,59 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.yelp.com/v3/businesses/search?limit=1&location=denver,co&sort_by=rating&term=chinese
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer
+      User-Agent:
+      - Faraday v1.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '171'
+      Content-Type:
+      - application/json
+      X-Routing-Service:
+      - routing-main--uswest2-5b584d59bc-btwtf; site=public_api_v3
+      Server:
+      - envoy
+      X-Zipkin-Id:
+      - 73259959120f6873
+      X-B3-Sampled:
+      - '0'
+      X-Proxied:
+      - 10-69-172-176-uswest2bprod
+      X-Extlb:
+      - 10-69-172-176-uswest2bprod
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Tue, 19 Jan 2021 16:28:31 GMT
+      Via:
+      - 1.1 varnish
+      X-Served-By:
+      - cache-den8247-DEN
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+    body:
+      encoding: UTF-8
+      string: '{"error": {"code": "VALIDATION_ERROR", "description": "''Bearer'' does
+        not match ''^(?i)Bearer [A-Za-z0-9\\\\-\\\\_]{128}$''", "field": "Authorization",
+        "instance": "Bearer"}}'
+  recorded_at: Tue, 19 Jan 2021 16:28:31 GMT
+recorded_with: VCR 6.0.0

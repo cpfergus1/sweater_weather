@@ -6,7 +6,6 @@ class Roadtrip
               :id
 
   def initialize(route_data, weather_data)
-    require 'pry'; binding.pry
     @start_city = address_smash(route_data, 0)
     @end_city = address_smash(route_data, 1)
     @travel_time = travel_time_calc(route_data[:route][:realTime])
