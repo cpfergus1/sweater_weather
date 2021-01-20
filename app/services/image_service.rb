@@ -1,6 +1,6 @@
 class ImageService
   def self.conn
-    Faraday.new(url: 'https://api.bing.microsoft.com/') do |req|
+    Faraday.new(url: ENV['IMAGE_SERVICE']) do |req|
       req.headers['Ocp-Apim-Subscription-Key'] = ENV['IMAGE_API_KEY']
     end
   end

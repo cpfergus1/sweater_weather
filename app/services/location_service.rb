@@ -1,6 +1,6 @@
 class LocationService
   def self.conn
-    Faraday.new(url: 'http://www.mapquestapi.com')
+    Faraday.new(url: ENV['LOCATION_SERVICE'])
   end
 
   def self.location_search(params)

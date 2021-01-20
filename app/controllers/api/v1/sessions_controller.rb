@@ -29,6 +29,7 @@ module Api
       end
 
       def login_params
+        params[:email] = params[:email].downcase
         params.permit(:email, :password)
       end
 

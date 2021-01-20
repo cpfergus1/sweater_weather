@@ -1,6 +1,6 @@
 class BusinessService
   def self.conn
-    Faraday.new(url: 'https://api.yelp.com') do |req|
+    Faraday.new(url: ENV['BUSINESS_SERVICE']) do |req|
       req.headers['Authorization'] = ENV['BUSINESS_API_KEY']
     end
   end

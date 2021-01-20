@@ -15,6 +15,7 @@ module Api
 
       def user_params
         params[:api_key] = SecureRandom.base64(14)
+        params[:email] = params[:email].downcase
         params.permit(:email, :password, :password_confirmation, :api_key)
       end
 
